@@ -19,7 +19,7 @@
 * @param {(boolean|number)} [options.buttons=true] - Display navigation buttons (stop/play).
 */
 function Carousel(options) {
-    var el = document.getElementById(options.elem),
+    var el = document.getElementById(options.id),
         autoplay       = options.autoplay || false,
         interval       = options.interval || 3000,
         controlDots    = options.dots && true,
@@ -77,7 +77,7 @@ function Carousel(options) {
     function showDots() {
         var dotContainer = document.createElement("ul");
         dotContainer.classList.add('b-carousel__nav-dots');
-        dotContainer.addEventListener("click", scrollToImage.bind(this));
+        dotContainer.addEventListener("click", scrollToImage);
 
         for (var i = 0; i < count; i++) {
             var dotElement = document.createElement("li");
@@ -261,7 +261,7 @@ function Carousel(options) {
     */
     function play() {
         if (cycle) return;
-        cycle = setInterval(next.bind(this), interval);
+        cycle = setInterval(next, interval);
     }
 
     /**
