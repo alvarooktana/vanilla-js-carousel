@@ -11,7 +11,7 @@ Vanilla Javascript carousel with all the basic features most of us will ever nee
 
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
-elem | string | carousel | The _id_ of the carousel container in the HTML markup.
+id | string | carousel | The _id_ of the carousel container in the HTML markup.
 interval | int  | 3000 | Auto play interval.
 initial | int | 0 | Index of the slide to start on.
 autoplay | boolean | false | Enables auto play of slides.
@@ -50,7 +50,7 @@ Initialize:
 
 ```javascript
 var carousel = new Carousel({
-    elem: 'carousel',
+    id: 'carousel',
     autoplay: false,
     interval: 1500,
     initial: 0,
