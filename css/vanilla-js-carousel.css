@@ -1,67 +1,61 @@
-.b-carousel {
-  background: rgba(0, 0, 0, 0.25);
-  height: 240px;
+.js-carousel {
+  background: rgba(0, 0, 0, 0.33);
+  height: 255px;
   margin: 0 auto 2em;
+  overflow: hidden;
   position: relative;
   width: 600px;
 }
-
-.b-carousel__frame {
-  height: 320px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
-.b-carousel__items {
+.js-carousel > ul {
+  height: 200px;
   list-style: none;
   margin: 0;
   padding: 0;
   width: 9999px;
 }
-.b-carousel__items li {
+.js-carousel > ul li {
   display: inline-block;
   float: left;
-  transition: margin-left 0.25s linear;
+  transition: margin-left 0.33s linear;
   width: 600px;
 }
-.b-carousel__items li img {
+.js-carousel > ul li img {
   max-width: 100%;
 }
-
-.b-carousel__nav-arrow_prev,
-.b-carousel__nav-arrow_next {
+.js-carousel .arrow_prev,
+.js-carousel .arrow_next {
   background: transparent;
   border: 0;
-  color: #555;
+  color: #e0e0e0;
   cursor: pointer;
   font: 400 10em sans-serif;
+  height: 200px;
   outline: 0;
   position: absolute;
   top: 0;
+  text-shadow: 0 0 10px #444;
+  width: 90px;
 }
-.b-carousel__nav-arrow_prev:hover,
-.b-carousel__nav-arrow_next:hover {
+.js-carousel .arrow_prev:hover,
+.js-carousel .arrow_next:hover {
   color: #999;
 }
-
-.b-carousel__nav-arrow_prev {
-  left: -75px;
+.js-carousel .arrow_prev {
+  left: 0;
 }
-
-.b-carousel__nav-arrow_next {
-  right: -75px;
+.js-carousel .arrow_next {
+  right: 0;
 }
-
-.b-carousel__nav-dots {
+.js-carousel .dots {
   display: inline-block;
   height: 1.25em;
   margin: 0;
   position: absolute;
-  bottom: .75em;
-  right: 2em;
+  bottom: 1em;
+  right: 1em;
+  width: auto;
 }
-.b-carousel__nav-dots li {
+.js-carousel .dots li {
   background: #555;
   border-radius: .75em;
   cursor: pointer;
@@ -70,40 +64,32 @@
   margin: 0 .75em;
   width: .75em;
 }
-.b-carousel__nav-dots li.active {
+.js-carousel .dots li.active {
   background: #fff;
   box-shadow: 0 0 3px 3px #ddd;
 }
-.b-carousel__nav-dots li:hover {
+.js-carousel .dots li:hover {
   background: #f5f5f5;
 }
-
-.b-carousel__button_stop,
-.b-carousel__button_play {
+.js-carousel .btn_stop,
+.js-carousel .btn_play {
   height: 2.25em;
   position: absolute;
-  bottom: .33em;
+  bottom: 1em;
   left: 2em;
   text-align: center;
   width: 5em;
 }
-
-.b-carousel__button_stop {
+.js-carousel .btn_stop {
   left: 100px;
 }
 
 body {
+  counter-reset: item;
   font-family: sans-serif;
+  font-size: 15px;
   margin: 0;
   padding: 0;
-}
-
-.tooltip {
-  background: #fefac9;
-  border: 2px dashed #f0db4f;
-  cursor: default;
-  display: inline-block;
-  padding: 0 5px;
 }
 
 img {
@@ -137,7 +123,7 @@ section {
 section h2 {
   background: #fefac9;
   border-bottom: 1px solid #f0db4f;
-  font-size: 14px;
+  font-size: 15px;
   margin: 0 0 30px;
   padding: 10px;
 }
@@ -145,7 +131,24 @@ section p, section ul, section ol {
   margin: 0 45px 30px;
 }
 section ol {
+  list-style: none;
   margin-left: 25px;
+}
+section ol li {
+  counter-increment: item;
+  margin-bottom: 3em;
+}
+section ol li:before {
+  margin-right: 10px;
+  border-radius: 4px;
+  content: counter(item);
+  background: #272822;
+  color: #fff;
+  width: 2em;
+  text-align: center;
+  display: inline-block;
+  height: 2em;
+  line-height: 2em;
 }
 section a {
   color: #55acee;
@@ -157,7 +160,12 @@ section a:hover {
 section table {
   border: 1px solid #eee;
   border-collapse: collapse;
-  margin: 16px 0;
+  font-size: 14px;
+  margin: 16px 32px 32px;
+  width: 92%;
+}
+section table td {
+  font-family: monospace;
 }
 section table tr:nth-child(2n) {
   background: #f5f5f5;
@@ -165,12 +173,18 @@ section table tr:nth-child(2n) {
 section table th, section table td {
   border: 1px solid #eee;
   padding: 10px;
+  text-align: left;
+}
+section table th {
+  background: #272822;
+  color: #fafafa;
+  font-size: 14px;
+  font-weight: 400;
+}
+section table th.subhead {
+  background: #fffeee;
+  color: #e09e41;
 }
 section code {
   font-size: 16px;
-}
-
-.smaller {
-  font-size: 16px;
-  font-style: italic;
 }
