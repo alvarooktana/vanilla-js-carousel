@@ -1,6 +1,8 @@
 Vanilla Javascript Carousel
 -------
 
+[![Build Status](https://travis-ci.org/zoltantothcom/vanilla-js-carousel.svg?branch=master)](https://travis-ci.org/zoltantothcom/vanilla-js-carousel) [![Coverage Status](https://coveralls.io/repos/github/zoltantothcom/vanilla-js-carousel/badge.svg?branch=master)](https://coveralls.io/github/zoltantothcom/vanilla-js-carousel?branch=master) [![Code Climate](https://codeclimate.com/github/zoltantothcom/vanilla-js-carousel/badges/gpa.svg)](https://codeclimate.com/github/zoltantothcom/vanilla-js-carousel)
+
 Pure Javascript carousel with all the basic features in 1024 bytes (minified and gzipped).
 
 *— Inspired by the blazing fast, lightweight, cross-platform and crazy popular [Vanilla JS](http://vanilla-js.com/)  framework.*
@@ -60,11 +62,11 @@ Pure Javascript carousel with all the basic features in 1024 bytes (minified and
         initial: 0,          // slide to start with
         dots: true,          // show navigation dots
         arrows: true,        // show navigation arrows
-        buttons: false,      // hide <*play*>/<*stop*> buttons,
-        btnStopText: 'Pause' // <*stop*> button text
+        buttons: false,      // hide play/stop buttons,
+        btnStopText: 'Pause' // STOP button text
     });
 
-    // Show the 3rd slide (Numeration of slides starts at 0)
+    // Show slide number 3 (Numeration of slides starts at 0)
     carousel.show(2);
 
     // Move to the next slide
@@ -78,7 +80,7 @@ Pure Javascript carousel with all the basic features in 1024 bytes (minified and
 #### Settings
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
-elem | string | 'carousel' | The _id_ of the carousel container in the HTML markup
+elem | string | carousel | The _id_ of the carousel container in the HTML markup
 interval | int  | 3000 | Auto play interval in milliseconds
 initial | int | 0 | Index of the slide to start on
 autoplay | boolean | false | Enables auto play of slides
@@ -89,12 +91,12 @@ buttons | boolean | true | Display navigation buttons (<*stop*>/<*play*>)
 #### CSS classes
 Option | Type | Default | Description
 ------ | ---- | ------- | -----------
-crslClass | string | `.js-carousel` | carousel container
-crslArrowPrevClass | string | `.arrow_prev` | <*prev*> arrow
-crslArrowNextClass | string | `.arrow_next` | <*next*> arrow
-crslDotsClass | string | `.dots` | nav dots container
-crslButtonPlayClass | string | `.btn_play` | <*play*> button
-crslButtonStopClass | string | `.btn_stop` | <*stop*> button
+crslClass | string | .js-carousel | CSS class of the carousel container
+crslArrowPrevClass | string | .arrow_prev | CSS class of the <*prev*> arrow
+crslArrowNextClass | string | .arrow_next | CSS class of the <*next*> arrow
+crslDotsClass | string | .dots | CSS class of the nav dots container
+crslButtonPlayClass | string | .btn_play | CSS class of the <*play*> button
+crslButtonStopClass | string | .btn_stop | CSS class of the <*stop*> button
 
 #### Button titles
 Option | Type | Default | Description
